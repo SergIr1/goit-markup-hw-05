@@ -45,7 +45,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="section-hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="button">Заказать услугу</button>
+                <button data-modal-open type="button" class="button">Заказать услугу</button>
             </div>
         </section>
         <section class="section feature">
@@ -95,9 +95,14 @@
             <div class="container">
                 <h2 class="section-work-title">Чем мы занимаемся</h2>
                 <ul class="work list">
-                    <li class="img-work"><img src="./images/box_1.jpg" alt="програмирование" width="370" /></li>
-                    <li class="img-work"><img src="./images/box_2.jpg" alt="мобильные приложения" width="370" /></li>
+                    <li class="img-work"><img src="./images/box_1.jpg" alt="програмирование" width="370" />
+                        <p class="text-work">Десктопные приложения</p>
+                    </li>
+                    <li class="img-work"><img src="./images/box_2.jpg" alt="мобильные приложения" width="370" />
+                        <p class="text-work">Мобильные приложения</p>
+                    </li>
                     <li class="img-work"><img src="./images/box_3.jpg" alt="ассоциативные технологии" width="370" />
+                        <p class="text-work">Дизайнерские решения</p>
                     </li>
                 </ul>
             </div>
@@ -280,6 +285,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
