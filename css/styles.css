@@ -23,6 +23,9 @@
     --bg-footer-color: #2f303a;
     --bg-work-color:rgba(47, 48, 58, 0.8);
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --button-border-color: rgba(0, 0, 0, 0.1);
+    --backdrop-color: rgba(0, 0, 0, 0.2);
+    --ovarlay-bg-color: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -106,6 +109,8 @@ height: auto
 }
 
 .logo{
+    transition: color 250ms var(--timing-function);
+
     display: block;
     padding-top: 24px;
     padding-bottom: 25px;
@@ -144,6 +149,7 @@ height: auto
 
 .site-nav-link{
     position: relative;
+    transition: color 250ms var(--timing-function);
 
     display: block;
     padding-top: 32px;
@@ -185,6 +191,8 @@ height: auto
 
 
 .adress-nav-link{
+    transition: color 250ms var(--timing-function);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,7 +209,7 @@ height: auto
 
 .adress-nav-link:hover,
 .adress-nav-link:focus{
-color: var(--accent-text-color);
+    color: var(--accent-text-color);
 }
 
 .link-icon-mailto{
@@ -249,6 +257,8 @@ margin: 0 auto;
 /* =================button================= */
 
 .button {
+    transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+
     display: inline-block;
     padding: 10px 32px;
     min-width: 200px;
@@ -262,7 +272,6 @@ margin: 0 auto;
 
 .button:hover,
 .button:focus {
-    color: var(--white-text-color);
     background-color: var(--bg-button-color);
     box-shadow: var(--first-card-shadow);
 }
@@ -347,8 +356,9 @@ margin: 0 auto;
 
 .text-work{
     position: absolute;
-    bottom: 0px;
-    width: 370px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 14px;
@@ -404,6 +414,8 @@ margin-bottom: 50px;
 
 
 .social-link{
+    transition: background-color 250ms var(--timing-function);
+
     width: 44px;
     height: 44px;
     color: var(--social-icon);
@@ -491,6 +503,8 @@ margin-bottom: 50px;
 }
 
 .menu-clients-link{
+    transition: color 250ms var(--timing-function), border 250ms var(--timing-function);
+
     width: 100%;
     height: 100%;
     border: 1px solid var(--social-icon);
@@ -501,11 +515,6 @@ margin-bottom: 50px;
 .logo-clients{
     fill: currentColor;
 
-}
-
-.menu-clients-link:hover,
-.menu-clients-link:focus{
-    color:var(--accent-text-color);
 }
 
 .menu-clients-link:hover,
@@ -527,8 +536,10 @@ margin-bottom: 50px;
 }
 
 .logo-white{
-display: inline-block;
-color: var(--white-text-color);
+    transition: color 250ms var(--timing-function);
+
+    display: inline-block;
+    color: var(--white-text-color);
 }
 
 .logo-white:hover,
@@ -537,8 +548,10 @@ color: var(--white-text-color);
 }
 
 .text-address{
-        display: block;
-        color: var(--white-text-color);
+    transition: color 250ms var(--timing-function);
+
+    display: block;
+    color: var(--white-text-color);
 }
 
 .footer-text-address{
@@ -551,6 +564,8 @@ color: var(--white-text-color);
 
 .footer-mail,
 .footer-tel{
+    transition: color 250ms var(--timing-function);
+
     color: var(--contact-text-color);
 }
 
@@ -598,6 +613,8 @@ color: var(--white-text-color);
 }
 
 .social-link-footer{
+    transition: background-color 250ms var(--timing-function);
+
     width: 44px;
     height: 44px;
     background-color: var(--bg-social-link);
@@ -663,6 +680,7 @@ color: var(--white-text-color);
 }
 
 .portfolio-card-link-wrap{
+    transition: box-shadow 250ms var(--timing-function);
     display: block;
     text-decoration: none;
 
@@ -701,32 +719,89 @@ box-shadow: var(--card-hover-shadow);
 }
 
 .card-ovarlay{
-        position: relative;
-        overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .ovarlay-card-content{
-        position: absolute;
-        left: 0;
-        top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
 
-        width: 100%;
-        height: 100%;
-        transform: translateY(100%);
-        transition: transform 250ms var(--timing-function);
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms var(--timing-function);
 
-        display: block;
+    display: block;
 
-        font-family: 'Roboto', sans-serif;
-        font-size: 18px;
-        line-height: 1.56;
-        letter-spacing: 0.03em;
-        color: var(--white-text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--white-text-color);
 
-        background-color: rgba(33, 150, 243, 0.9);
-        padding: 63px 24px;
+    background-color: var(--ovarlay-bg-color);
+    padding: 63px 24px;
 }
 
 .portfolio-card-link-wrap:hover .ovarlay-card-content{
     transform: translateY(0);
+}
+
+/* ====================МОДАЛЬНОЕ ОКНО===================== */
+
+.backdrop{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--backdrop-color);
+
+    opacity: 1;
+    transition: opacity 250ms linear;
+}
+
+.backdrop.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 528px;
+    min-height: 581px;
+
+    background-color: var(--white-text-color);
+    box-shadow: var(--border-card-shadow);
+    border-radius: 4px;
+}
+
+.icon-close{
+    color: var(--logo-text-color);
+}
+
+.button-icon-close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid var(--button-border-color);
+    background-color: var(--white-text-color);
+    border-radius: 50%;
+    cursor: pointer;
+
 }
