@@ -267,7 +267,14 @@ margin: 0 auto;
     background-color: var(--accent-text-color);
     cursor: pointer;
     border-radius: 4px;
-    text-align: center;
+    border: none;
+
+    font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.88;
+        letter-spacing: 0.06em;
+        text-align: center;
 }
 
 .button:hover,
@@ -359,18 +366,22 @@ margin: 0 auto;
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 14px;
         line-height: 1.14;
-        text-align: center;
         letter-spacing: 0.03em;
         text-transform: uppercase;
 
         color: var(--white-text-color);
         background: var(--bg-work-color);
-        padding-top: 27px;
-        padding-bottom: 27px;
+
 }
 
 /* =================OUR TEAM================= */
@@ -414,7 +425,7 @@ margin-bottom: 50px;
 
 
 .social-link{
-    transition: background-color 250ms var(--timing-function);
+    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 
     width: 44px;
     height: 44px;
@@ -432,7 +443,7 @@ margin-bottom: 50px;
 
 .social-link:hover .icon-social-link,
 .social-link:focus .icon-social-link {
-    fill: var(--white-text-color);
+    color: var(--white-text-color);
 }
 
 .icon-social-link {
@@ -745,7 +756,8 @@ box-shadow: var(--card-hover-shadow);
     padding: 63px 24px;
 }
 
-.portfolio-card-link-wrap:hover .ovarlay-card-content{
+.portfolio-card-link-wrap:hover .ovarlay-card-content,
+.portfolio-card-link-wrap:focus .ovarlay-card-content{
     transform: translateY(0);
 }
 
@@ -760,7 +772,8 @@ box-shadow: var(--card-hover-shadow);
     background-color: var(--backdrop-color);
 
     opacity: 1;
-    transition: opacity 250ms linear;
+    transition: opacity 250ms linear, visibility 250ms linear;
+
 }
 
 .backdrop.is-hidden{
