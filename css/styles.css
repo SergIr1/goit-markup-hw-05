@@ -426,7 +426,7 @@ margin-bottom: 50px;
 
 
 .social-link{
-    transition: background-color var(--transition-duration) var(--timing-function), color var(--transition-duration) var(--timing-function);
+    transition: background-color var(--transition-duration) var(--timing-function);
 
     width: 44px;
     height: 44px;
@@ -436,6 +436,9 @@ margin-bottom: 50px;
     border-radius: 50%;
 }
 
+.icon-social-link{
+    transition: color var(--transition-duration) var(--timing-function);
+}
 
 .social-link:hover,
 .social-link:focus{
